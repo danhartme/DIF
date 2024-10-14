@@ -63,10 +63,23 @@ body {
 
 .ticker-content {
     display: flex;
-    animation: ticker 30s linear infinite;
+    animation: ticker 20s linear infinite;
     height: 100%;
     align-items: center;
     white-space: nowrap;
+}
+/* Medium screens */
+@media screen and (min-width: 768px) {
+    .ticker-content {
+        animation: ticker 40s linear infinite;
+    }
+}
+
+/* Large screens */
+@media screen and (min-width: 1024px) {
+    .ticker-content {
+        animation: ticker 60s linear infinite;
+    }
 }
 
 @keyframes ticker {
