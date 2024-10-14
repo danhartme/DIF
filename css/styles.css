@@ -37,8 +37,9 @@
             100% { transform: translateX(-100%); }
         }
         .ticker-item {
+            font: unbounded;    
             flex: 0 0 auto;
-            font-size: 24px;
+            font-size: 36px;
             font-weight: bold;
             padding: 0 20px;
             font-weight: bold;
