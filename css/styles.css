@@ -81,25 +81,3 @@
             width: 24px;
             height: 24px;
         }
-        .ticker-bottom {
-            width: 100%;
-            overflow: hidden;
-            margin-top: 40px;
-        }
-        .bottom-slider {
-            display: flex;
-            filter: drop-shadow(gray 0rem 0.5rem 0.75rem);
-            animation: slide 15s linear infinite;
-        }
-        .bottom-slider img {
-            width: 380px;
-            height: 380px;
-            object-fit: cover;
-            flex-shrink: 0;
-            margin-right: 40px;
-            margin-bottom: 40px;
-        }
-        @keyframes slide {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-220px * 5)); }
-        }
