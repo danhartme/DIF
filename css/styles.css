@@ -3,16 +3,51 @@ body, html {
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: transparent;
-    color: #0e0e16;
+    color: #141466;
     height: 100%;
     overflow-x: hidden;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+    body {
+        overflow-y: auto; /* Enable vertical scrolling on mobile */
+        min-height: 100vh;
+    }
+
+    .main {
+        padding: 80px 0; /* Increase padding to prevent content from being hidden under tickers */
+        min-height: 100vh;
+        margin-bottom: 60px; /* Add margin to prevent overlap with bottom ticker */
+    }
+
+    .bottom-icons {
+        position: relative; /* Change from absolute to relative positioning */
+        bottom: auto;
+        left: auto;
+        transform: none;
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+        margin-top: auto;
+    }
 }
 
+/* Desktop-specific styles */
+@media screen and (min-width: 769px) {
+    body {
+        overflow-y: hidden; /* Disable vertical scrolling on desktop */
+    }
+
+    .bottom-icons {
+        position: absolute;
+        bottom: 8%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Rest of your existing styles remain unchanged */
 .ticker-top {
     width: 100%;
     overflow: hidden;
@@ -42,17 +77,17 @@ body {
 }
 
 @keyframes changeBackgroundColor {
-    0% { background-color: #ff00ff; } /* Bright Magenta */
-    20% { background-color: #00ffff; } /* Bright Cyan */
-    40% { background-color: #ffff00; } /* Bright Yellow */
-    60% { background-color: #ff0000; } /* Bright Red */
-    80% { background-color: #00ff00; } /* Bright Green */
-    100% { background-color: #ff00ff; } /* Back to Bright Magenta */
+    0% { background-color: #FFF22D; } /* Bright Magenta */
+    20% { background-color: #1CDBD3; } /* Bright Cyan */
+    40% { background-color: #3B97E2; } /* Bright Yellow */
+    60% { background-color: #FF1A3B; } /* Bright Red */
+    80% { background-color: #FF833E; } /* Bright Green */
+    100% { background-color: #FFF22D; } /* Back to Bright Magenta */
 }
 
 .ticker-stroke {
     height: 3px;
-    background-color: #0e0e16;
+    background-color: #141466;
     flex-shrink: 0;
 }
 
@@ -125,8 +160,8 @@ body {
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    color: #0e0e16;
-    border: 2px solid #0e0e16;
+    color: #141466;
+    border: 2px solid #141466;
     padding: 20px;
     margin: 5px 0;
     text-decoration: none;
@@ -137,7 +172,7 @@ body {
 }
 
 .link-button:hover {
-    background-color: #0e0e16;
+    background-color: #141466;
     color: white;
 }
 
@@ -146,4 +181,69 @@ body {
     fill: currentColor;
     width: 20px;
     height: 20px;
+}
+
+.roh-logo {
+    margin-top: 20px;
+    width: 164px;
+    height: 52px;
+    color: #141466;
+}
+
+.text-conteiner {
+    margin-top: 20px;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px auto;
+    max-width: 600px;
+}
+
+.countdown-box {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #141466;
+    border-radius: 10px; /* Added rounded corners */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.countdown-value {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.countdown-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 480px) {
+    .countdown-container {
+        gap: 10px;
+    }
+    
+    .countdown-box {
+        width: 70px;
+        height: 70px;
+        border-radius: 8px; /* Slightly smaller radius for mobile */
+    }
+    
+    .countdown-value {
+        font-size: 24px;
+    }
+    
+    .countdown-label {
+        font-size: 10px;
+    }
 }
