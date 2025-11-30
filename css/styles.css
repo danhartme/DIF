@@ -1,11 +1,17 @@
-body, html {
+html, body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: transparent;
-    color: #141466;
     height: 100%;
     overflow-x: hidden;
+    background-color: transparent;
+    color: #141466;
+
+    /* Use the webfont first, fallback to system fonts */
+    font-family: 'Dela Gothic One', Arial, Helvetica, sans-serif;
+
+    /* Improve cross-platform rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Mobile-specific styles */
@@ -248,3 +254,4 @@ body, html {
     }
 
 }
+
